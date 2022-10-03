@@ -5,6 +5,14 @@ import Die from "./Die"
 function App() {
   const [count, setCount] = useState(0)
 
+function allNewDice() {
+ const randomNumbers = [];
+ for (let i = 0; i < 10; i++) {
+  randomNumbers.push(Math.ceil(Math.random() * 6))
+ }
+ return randomNumbers
+}
+
   return (
     <div className='screen'>
     <div className="App">
