@@ -1,7 +1,8 @@
 
-.screen {
+body {
   display: flex;
   justify-content: center;
+  font-family: 'karla', sans-serif;
 }
 
 .App {
@@ -23,6 +24,37 @@ main {
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
+}
+
+.button-div {
+  margin-top: 10px;
+}
+
+button {
+  font-family: 'karla', sans-serif;
+  height: 3rem;
+  width: 7rem;
+  font-size: 1.5rem;
+  background-color: rgb(220, 20, 93);
+  color: white;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+h3 {
+  color: rgb(8, 21, 83);
+  margin-top: -1rem;
+}
+
+.text {
+  color: #5A5A5A;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: center;
 }
 
 .dieFace {

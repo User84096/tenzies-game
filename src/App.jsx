@@ -13,15 +13,23 @@ function allNewDice() {
  return randomNumbers
 }
 
+  function newDie() {
+setDie(allNewDice())}
+
 const dice = die.map(dice => <Die value={dice} /> )
 
   return (
-    <div className='screen'>
     <div className="App">
       <main>
+        <div className='text'>
+          <h1>Tenzies</h1>
+          <h3>Roll until all dice are the same. Click each die to 
+          freeze it at its current value between rolls.</h3>
+        </div>
         {dice}
+        <div className='button-div' onClick={newDie}><button>Roll</button></div>
       </main>
-    </div>
+      
     </div>
   )
 }
