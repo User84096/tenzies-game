@@ -3,7 +3,7 @@ import Die from "./Die"
 import { nanoid } from 'nanoid'
 
 function App() {
-  const [die, setDie] = useState(allNewDice())
+  const [die, setDie] = useState(allNewDice)
 
 function allNewDice() {
  const randomNumbers = [];
@@ -18,15 +18,23 @@ function allNewDice() {
 
   function newDie() {
 setDie(allNewDice())}
-  
 
-const dice = die.map(dice => 
+function holdDice(id) {
+  setDie(oldDice => {
+     return oldDice.map(dice => dice.id === id ? 
+      {...dice, isHeld: !dice.isHeld} :
+      dice
+     )})
+}
+
+const dice = die.map(dice => (
   <Die 
     key={dice.id} 
     value={dice.value} 
     held={dice.isHeld} 
+    hold={() => holdDice(dice.id)}
     />
-  )
+))
 
   return (
     <div className="App">
