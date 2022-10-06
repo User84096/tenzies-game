@@ -5,19 +5,26 @@ import { nanoid } from 'nanoid'
 function App() {
   const [die, setDie] = useState(allNewDice)
 
+function rollingDice() {
+        return {
+          value: Math.ceil(Math.random() * 6), 
+          id: nanoid(),
+          isHeld: false
+        }}
+
 function allNewDice() {
  const randomNumbers = [];
  for (let i = 0; i < 10; i++) {
-  randomNumbers.push({
-    value: Math.ceil(Math.random() * 6), 
-    id: nanoid(),
-    isHeld: false
-  })}
+  randomNumbers.push(rollingDice())}
   return randomNumbers
 }
 
   function newDie() {
-setDie(allNewDice())}
+    setDie(oldDice => {
+      return oldDice.map(dice =>
+        dice.isHeld ? dice : rollingDice() 
+        )})
+    }
 
 function holdDice(id) {
   setDie(oldDice => {
