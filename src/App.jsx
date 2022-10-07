@@ -4,6 +4,16 @@ import { nanoid } from 'nanoid'
 
 function App() {
   const [die, setDie] = useState(allNewDice)
+  const [tenzies, setTenzies] = useState(false)
+
+  useEffect(() => {
+    const theNumber = die[0].value
+     if (die.every(dice => dice.isHeld) &&
+      die.every(dice => theNumber === dice.value)) {
+         setTenzies(!tenzies);
+         console.log("You won!")
+     } 
+  }, [die])
 
 function rollingDice() {
         return {
