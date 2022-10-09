@@ -1,5 +1,5 @@
 {
-  "homepage": "https://user84096.github.io/tenzies-game/",
+  "homepage": "https://user84096.github.io/tenzies-game",
   "name": "tenzies-game",
   "private": true,
   "version": "0.0.0",
@@ -12,7 +12,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "gh-pages": "^4.0.0",
     "nanoid": "^4.0.0",
     "react": "^18.2.0",
     "react-confetti": "^6.1.0",
@@ -22,6 +21,7 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
+    "gh-pages": "^4.0.0",
     "vite": "^3.1.0"
   }
 }
